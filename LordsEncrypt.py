@@ -10,12 +10,11 @@ import tkinter as tk
 
 from tkinter import filedialog, ttk
 
-#GUI#####################################################################
 def close_window():
-    window.destroy()  # Close the main window
-    if root.winfo_exists():  # Check if root window still exists
-        root.destroy()  # Close the root window
-    sys.exit()  # Exit the Python process
+    window.destroy()  
+    if root.winfo_exists():  
+        root.destroy()  
+    sys.exit()  
 
 initial_x = None
 initial_y = None
@@ -297,7 +296,5 @@ file_error_label = tk.Label(window, text="", font=button_font, fg="dark red", bg
 file_error_label.pack(anchor="w", padx=10, pady=(0, 10))
 
 window.protocol("WM_DELETE_WINDOW", close_window)
-# Run the main event loop
-root.mainloop()
 
-#GUI#####################################################################
+root.mainloop()
