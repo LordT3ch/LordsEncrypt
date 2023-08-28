@@ -10,11 +10,12 @@ import tkinter as tk
 
 from tkinter import filedialog, ttk
 
+#GUI#####################################################################
 def close_window():
-    window.destroy()  
-    if root.winfo_exists():  
-        root.destroy()  
-    sys.exit()  
+    window.destroy()  # Close the main window
+    if root.winfo_exists():  # Check if root window still exists
+        root.destroy()  # Close the root window
+    sys.exit()  # Exit the Python process
 
 initial_x = None
 initial_y = None
@@ -262,8 +263,10 @@ window.overrideredirect(False)
 window.geometry("650x300")
 window.configure(background="#2e2e2e")
 window.title("Lord's Encrypt")
-
-window.iconbitmap("encryption.ico")
+try:
+    window.iconbitmap("encryption.ico")
+except:
+    pass
 
 button_frame = tk.Frame(window, bg="#2e2e2e")
 button_frame.pack(anchor="nw", padx=10, pady=10)
@@ -296,5 +299,7 @@ file_error_label = tk.Label(window, text="", font=button_font, fg="dark red", bg
 file_error_label.pack(anchor="w", padx=10, pady=(0, 10))
 
 window.protocol("WM_DELETE_WINDOW", close_window)
-
+# Run the main event loop
 root.mainloop()
+
+#GUI#####################################################################
